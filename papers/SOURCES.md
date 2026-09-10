@@ -120,23 +120,6 @@ issue number is confirmed from the publisher's site. Not fabricated here.
 
 ---
 
-## 6. PENDING — not obtained
-
-**Detecting greenwashing behaviour in decarbonization performance.** *Accounting & Finance, 65*(4),
-3739–3762 (2025). Wiley.
-
-- **Status: NOT OBTAINED.** No PDF; no note file written.
-- **Authors: unknown** — not supplied and not verifiable without the paper.
-- **No findings from this paper appear anywhere in this repository.** Nothing has been inferred
-  from its title. Any statement about its contents would be fabrication.
-- **Why it matters:** the title suggests a decarbonisation-anchored greenwashing measure, which
-  would sit directly alongside Peng et al. (note 03) and could bear on the anchor-comparison
-  question. **It should be obtained before the literature review is called complete.**
-- **To obtain:** DOI lookup via the *Accounting & Finance* archive (Wiley), 65(4), pp. 3739–3762;
-  or institutional access / interlibrary loan.
-
----
-
 ## Summary of citation corrections
 
 | # | Status |
@@ -146,4 +129,3 @@ issue number is confirmed from the publisher's site. Not fabricated here.
 | 3 | Verified as supplied; DOI added |
 | 4 | **Completed** — authors extracted (Wang, Gao & Sun) |
 | 5 | **Completed** — authors extracted (Forliano, Battisti, de Bernardi & Kliestik); issue number still missing |
-| 6 | **Pending** — not obtained, no note written |

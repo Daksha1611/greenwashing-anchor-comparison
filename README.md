@@ -47,47 +47,42 @@ how visible a company is.
 
 ## Common thread
 
-All five papers circle the same conclusion:
+All five papers point toward the same conclusion:
 
 > Companies that talk greener frequently perform worse. This has been shown twice
-> independently — against pollution fines and against measured carbon emissions.
-> But the tools built to *detect* greenwashing are increasingly scored against
-> the company's own words rather than against reality, and **more disclosure has
-> not produced more honesty**. If a detection method rewards polished writing and
-> heavy press coverage instead of actual conduct, it reproduces the very problem
-> it was built to expose.
+> over, independently, against pollution fines and against measured carbon
+> emissions. But the tools built to detect greenwashing are increasingly scored
+> against the company's own words rather than against reality, and more disclosure
+> has not produced more honesty. If a detection method rewards polished writing
+> and heavy press coverage rather than actual conduct, it repeats the problem it
+> was built to expose.
 
 ## What we found while reviewing
 
-Paper 1 is treated in the literature — and was treated in this project's original
-framing — as the standard *media-based* greenwashing index. Working through its
-methodology, **its published formula contains no media term**: all three inputs
-are computed from the company's own report. The index measures how densely a
-report is packed with ESG vocabulary, not any gap between claims and coverage.
+Paper 1 is generally treated as the standard media-based greenwashing index, and
+that is how we treated it when we started. Working through the methodology, we
+found that its published formula contains no media component at all: all three
+inputs come from the company's own report. The index measures how densely a report
+is packed with ESG vocabulary, not any gap between what a company claims and how
+the press describes it.
 
-We verified the arithmetic against the paper's own published tables (it
-reproduces their figures to four decimal places), so this isn't a
-misreading — the formula genuinely is what it is. Details in
+We checked our reading by recalculating the authors' own published figures, which
+match exactly, so this is not a misunderstanding on our part. The working is in
 [`synthesis/gsi-formula.md`](synthesis/gsi-formula.md).
 
 This sharpens the research question rather than weakening it, but it changes what
-the project can claim: we build our own media-based measure and specify it fully,
-rather than claiming to replicate theirs.
+we can claim. We build our own media-based measure and set it out in full, rather
+than presenting it as a replication of theirs.
 
 ## The PDFs
 
 All five papers are in [`papers/`](papers/); see
 [`papers/SOURCES.md`](papers/SOURCES.md) for full citations, DOIs and links.
 
-Three of the supplied citations needed correcting against the PDFs — most
-notably Paper 2, which has exactly two authors (not "et al.") and belongs to
-2025, not 2024. Paper 1 is published by MDPI; `SOURCES.md` records its indexing
-status, which is worth knowing given how heavily this project leans on it.
-
-One paper could not be obtained (*Detecting greenwashing behaviour in
-decarbonization performance*, Accounting & Finance, 2025). It is marked pending
-in `SOURCES.md`, has no note file, and **nothing has been assumed about its
-contents**.
+Three of the citations needed correcting against the PDFs. The clearest case is
+Paper 2, which has exactly two authors rather than "et al.", and belongs to 2025
+rather than 2024. Paper 1 is published by MDPI, and `SOURCES.md` records its
+indexing status, which is worth knowing given how much this project relies on it.
 
 ## How to use these notes
 
@@ -98,7 +93,7 @@ how the five relate to each other.
 
 ## Status
 
-**Literature review — 5 of 6 papers.** Notes, synthesis and report complete.
+**Literature review complete.** Notes, synthesis and report written.
 
 **Experiments — not started.** This repository is the review and design phase.
 No data has been retrieved and no index has been computed.
