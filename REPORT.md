@@ -14,7 +14,7 @@ Business Economics project · initial review phase
 4. [The gap nobody has filled](#4-the-gap-nobody-has-filled)
 5. [The project idea](#5-the-project-idea)
 6. [Datasets we would need to implement this](#6-datasets-we-would-need-to-implement-this)
-7. [Where we would go next](#7-where-we-would-go-next)
+7. [Where the project stands, and how we plan to improve it](#7-where-the-project-stands-and-how-we-plan-to-improve-it)
 8. [Quick reference: terms](#8-quick-reference-terms)
 
 ---
@@ -51,7 +51,7 @@ choice the **reality anchor**:
 | **Media** | What does the press say about this company's environmental record? |
 | **None** | Just analyse the report's language and don't check it against anything |
 
-**Here is the whole point of this project.** All four choices exist in published,
+**This is the central problem the project addresses.** All four choices exist in published,
 peer-reviewed research. Everybody picks one and stops. **Nobody has checked
 whether they give the same answer.** If you rank companies from worst to best
 greenwasher using violations, and then rank them again using media coverage, do
@@ -113,8 +113,8 @@ it actually does, and regardless of what the press says.
 **What could be improved.** Besides the formula issue, we found several things
 that don't hold up:
 
-- The paper's headline claim that imbalanced companies had "significantly higher"
-  greenwashing is **not statistically significant** — the two tests give p = 0.077
+- The paper's main claim — that companies which emphasise one ESG pillar over the
+  others show "significantly higher" greenwashing — is **not statistically significant** — the two tests give p = 0.077
   and p = 0.064, both above the usual 0.05 cutoff, and both confidence intervals
   include zero.
 - The text says "all GSI values exceed 0.5", but their own table reports a
@@ -248,8 +248,8 @@ different things. Only a model that reads context can separate them.
   from the report's own text. That 97.79% accuracy figure means the AI agrees
   with *human readers* — not that it agrees with whether the company actually
   pollutes.
-- To their credit, the authors never claim otherwise. This is the same blind spot
-  as Paper 1, but stated honestly.
+- The authors never claim otherwise. This is the same weakness as Paper 1, but
+  this paper is open about it.
 - Chinese A-share companies under a specific disclosure regime — transfer to US
   companies is untested.
 
@@ -275,8 +275,7 @@ academic databases and analysed the structure of the literature.
 - They propose organising the field across three levels: macro (society), meso
   (the organisation), micro (individual people).
 
-**How useful it actually is for us — honestly, moderately.** Two limits worth
-being clear about:
+**How useful it is for us — moderately.** Two limits are worth stating clearly:
 
 - It maps **theories**, not **measurement methods**. It doesn't compare
   violation-anchored vs media-anchored vs emissions-anchored approaches. So it
@@ -333,7 +332,7 @@ Here is the situation, laid out plainly:
 anywhere in this literature comparing one greenwashing measure against another —
 no correlation, no overlap test, nothing.
 
-### Why this isn't just tidiness — the two papers actively contradict each other
+### Why this matters — two of the papers contradict each other
 
 Look at what Papers 1 and 3 each say about **big companies**:
 
@@ -350,8 +349,9 @@ explanation that makes both true at once:
 > departments** — they write polished reports, they get lots of press coverage,
 > they know how to sound credible.
 
-We call this the **salience hypothesis**: media-based greenwashing measures may
-largely be measuring **how visible a company is**, not how much it lies.
+We call this the **visibility problem** (or *salience hypothesis*): media-based
+greenwashing measures may largely be measuring **how visible a company is**, not
+how much it lies.
 
 Nobody has tested it. And notably, **the authors of Paper 1 ask for exactly this
 test themselves** — their own suggested next step is to check NLP-based
@@ -435,7 +435,7 @@ We build the company list from **emissions and filing records first**, and only
 This copies Paper 2's careful sampling. If you start by collecting whatever
 reports are easy to find, you automatically over-select big, visible, well-resourced
 companies — which are exactly the companies our hypothesis is about. That would
-contaminate the result before we started.
+spoil the result before we started.
 
 ### An honest note on what we can claim
 
@@ -488,28 +488,196 @@ field, which does part of this job for us.
 
 ---
 
-## 7. Where we would go next
+## 7. Where the project stands, and how we plan to improve it
 
-Since this is still the review phase, the next steps are small and concrete:
+### 7.1 What the project is right now
 
-1. **Get the sixth paper.** *Detecting greenwashing behaviour in decarbonization
-   performance* (Accounting & Finance, 2025) couldn't be obtained. Its title
-   suggests another emissions-based anchor, which is directly relevant.
-2. **Build the company list first.** Match EPA emissions reporters to SEC company
-   IDs and get to a clean list of 150–300 firms. Everything else depends on this,
-   and it's the part most likely to go wrong.
-3. **Do the easiest anchor first.** GDELT needs no key and no matching against
-   facility records — just company name queries. It's the fastest way to get a
-   real number on the board.
-4. **Then add EPA ECHO and GHGRP**, and only then compute the three indices and
-   compare them.
-5. **Decide the evaluation before looking at results** — fix the correlation
-   threshold and the "worst 10%" cutoff in advance, so the analysis can't be
-   tuned to produce an interesting answer.
+**Right now this project is a literature review and a research design. Nothing has
+been built or measured.**
 
-A useful side-result available early: because Paper 1's index reduces to "how many
-ESG buzzwords are in the report", we can cheaply test whether *that alone*
-correlates with any real-world anchor. If it doesn't, that's informative about a
+Concretely, what exists today:
+
+| What | Status |
+|---|---|
+| Five papers read in full and annotated | Done — `notes/01`–`notes/05` |
+| Paper 1's index reconstructed and verified | Done — `synthesis/gsi-formula.md` |
+| Papers compared side by side | Done — `synthesis/comparison.md` |
+| Data sources identified with access notes | Done — `synthesis/datasets-and-access.md` |
+| Research question and hypotheses | Written — `synthesis/open-questions.md` |
+| Sixth paper | **Not obtained** |
+| Company sample | **Not built** — no list of firms exists yet |
+| Data retrieved from any source | **None** |
+| Any index computed | **None** |
+| Code | **None** — deliberately, this phase is reading and design |
+
+So the honest description is: **we understand the problem and we know what we
+would build. We have not started building it.**
+
+**What the review has actually produced** — three things worth keeping:
+
+1. **A framing.** The "reality anchor" idea — that the interesting difference
+   between these papers is *what they check green talk against* — is our own
+   organising concept, and it turns five loosely related papers into one clear
+   question.
+2. **A verified finding.** Paper 1's Greenwashing Severity Index does not contain
+   the media component the paper says it does. We confirmed this by checking the
+   arithmetic against the authors' own published tables. This is publishable on its own.
+3. **A design that follows from the gap** rather than one imposed on it, including
+   sampling choices copied from the most methodologically careful paper in the set.
+
+### 7.2 How we hope to improve on the existing work
+
+Five specific improvements, each one answering a weakness we found:
+
+**1. Compare anchors instead of picking one.**
+Every paper reviewed commits to a single reality anchor and stops. We compute
+three on the same companies and measure whether they agree. This is the core
+contribution and nothing in the literature does it.
+
+**2. Use a language model instead of word lists.**
+Paper 1 counts dictionary words. Paper 4 demonstrates why that fails: "we are
+committed to reducing emissions" and "we cut emissions 12% in 2023" share almost
+all their vocabulary but mean opposite things. We use ClimateBERT's
+commitment-versus-action distinction, which is the English equivalent of what
+Paper 4 did for Chinese.
+
+**3. Use the regulator's own records, not a commercial database.**
+Paper 2 identifies violators through MSCI and Refinitiv fields. We go to EPA ECHO
+directly — the primary source those databases are themselves derived from. Fewer
+intermediaries, and the full violation history rather than a summary flag.
+
+**4. Specify the index fully, so it can be replicated.**
+Paper 1's index cannot be reproduced from the paper: the normalisation population
+and the document collection are both unstated. Whatever we build, every step will be
+written down in enough detail that someone else can rebuild it. Having found this
+problem in another paper, it would be a bad result to repeat it in our own.
+
+**5. Test the thing that would invalidate our own result.**
+Bad company-to-facility matching produces noise, noise pushes correlations toward
+zero, and low correlation is exactly what our hypothesis predicts. So sloppy data
+work would "confirm" our hypothesis for entirely the wrong reason. We measure the
+match rate and re-run everything on the high-confidence subset. A disagreement
+result is only believable if this check passes.
+
+### 7.3 The technical part
+
+Everything below is free and open. No paid data subscription, no commercial ESG
+database, no GPU strictly required.
+
+**Language and core libraries**
+
+| Component | Choice | Why |
+|---|---|---|
+| Language | **Python 3.11+** | Standard for this kind of work |
+| PDF text extraction | **pypdf** | PyPDF2 is deprecated and must not be used |
+| Sentence splitting | **spaCy** | Sustainability reports are full of bullets, headings and table fragments that naive splitting mangles |
+| Language model | **transformers** (Hugging Face) | Runs ClimateBERT |
+| Data handling | **pandas** | Standard |
+| Statistics | **scipy.stats**, **statsmodels**, **scikit-learn** | Spearman, regression, Cohen's κ respectively |
+| Web requests | **requests** | All four data sources are plain web APIs |
+
+**The model: ClimateBERT, not FinBERT.** ClimateBERT is a BERT-family model
+pre-trained on climate text, with a classifier that separates a *commitment* (a
+promise about the future) from an *action* (something actually done). That is
+exactly the distinction that makes a greenwashing measure work. **FinBERT is the
+wrong tool** — it is trained on financial sentiment, meaning bullish versus
+bearish analyst language, which has nothing to do with environmental claims.
+
+It is a small model by modern standards (roughly 110 million internal settings, far
+smaller than GPT-scale models), so it runs on an ordinary laptop processor. A
+graphics card would make it faster but is not needed at this sample size.
+
+**The four data interfaces**
+
+| Source | Interface | Auth | Main technical catch |
+|---|---|---|---|
+| **GDELT** | DOC 2.0 web API; BigQuery for bulk history | None | ~250 articles per query and a rolling window — long histories need BigQuery. Parse the `V2Tone` field, which packs seven comma-separated values |
+| **EPA ECHO** | Web API (`get_facilities`, `detailed_facility_report`, `get_case_report`) | None | Paginated; broad queries time out, so filter by state or industry code. Several fields are fixed 3- or 5-year lookbacks, **not** annual values — treating them as yearly would be a serious error |
+| **EPA GHGRP** | Annual bulk download; Envirofacts API | None | Only covers facilities emitting 25,000+ tonnes CO2e/year. Publishes a `PARENT_COMPANY` field — the single most useful shortcut we have |
+| **SEC EDGAR** | `data.sec.gov` submissions API; full-text search | None, but a contact email in the `User-Agent` header is **mandatory** — requests without one are refused | Hard enforced limit of 10 requests/second |
+
+**The pipeline**
+
+```
+   Build the company list FIRST
+   (GHGRP emitters  ->  matched to SEC CIK  ->  150-300 firms)
+                        │
+        then go and fetch their sustainability reports
+                        │
+                        ▼
+              pypdf  ->  spaCy sentence split
+                        │
+                        ▼
+              ClimateBERT: commitment vs action
+                        │
+                = the "talk" score
+                        │
+        ┌───────────────┼───────────────┐
+        ▼               ▼               ▼
+     GDELT           EPA ECHO        EPA GHGRP
+    tone score      violations       emissions
+        │               │               │
+        └───────────────┼───────────────┘
+                        ▼
+        GSI-media / GSI-violation / GSI-emissions
+                        │
+                        ▼
+     scipy: Spearman  |  sklearn: Cohen's kappa
+             statsmodels: salience regression
+```
+
+**Why the company list is built first.** This is a technical decision with a
+statistical reason. If you start by collecting whatever sustainability reports are
+easy to find, you automatically over-select large, visible, well-resourced firms —
+which are precisely the firms the salience hypothesis is about. The sample would be spoiled
+before any analysis began. Paper 2 solved this by matching firms *before*
+looking for reports, and we copy that ordering.
+
+**The hard engineering problem: entity matching.**
+The EPA tracks **facilities**. The stock market tracks **companies**. GDELT tracks
+**free-text names**. There is no shared identifier anywhere.
+
+One corporation may own 200 facilities under 50 operating names, and ownership
+changes year to year — so matches must be year-aware, not static. There are also simpler problems: legal
+endings (INC, CORP, LLC, HOLDINGS), and names that are genuinely ambiguous, where
+"Delta" could be an airline or a tap manufacturer.
+
+The plan, in order of reliability: start from GHGRP's `PARENT_COMPANY` field, bridge
+into ECHO through the shared facility registry ID, then exact matching on cleaned-up
+names, then approximate ("fuzzy") matching **checked by hand**, then hand-coding
+whatever is left.
+At 150–300 firms, hand-checking the remainder is perhaps a day of work and worth
+doing properly.
+
+**Engineering practices that matter here**
+
+- **Save every API response the first time it is fetched.** GDELT and ECHO are live
+  databases that change over time; without saved copies, results cannot be repeated. Record the
+  retrieval date alongside the data.
+- **Fix the analysis parameters before computing anything** — the correlation
+  threshold, the "worst 10%" cutoff, the regression specification. Otherwise the
+  analysis can be tuned, consciously or not, until it produces an interesting answer.
+- **Log extraction failures rather than dropping them silently.** A PDF that fails
+  to parse is a missing company, and image-only PDFs correlate with smaller, older
+  firms — so silent failures would quietly reshape the sample.
+- **Keep article *volume* as its own variable.** It is not a diagnostic to be
+  discarded after fetching tone; the number of articles about a firm is the direct
+  measure of visibility, and it is the key regressor in the salience test.
+
+### 7.4 Immediate next steps
+
+1. **Obtain the sixth paper** — *Detecting greenwashing behaviour in decarbonization
+   performance* (Accounting & Finance, 2025). Its title suggests another
+   emissions-based anchor, directly relevant to the comparison.
+2. **Build the company list.** Match GHGRP emitters to SEC CIKs and get to a clean
+   150–300 firms. Everything depends on this and it is the part most likely to go wrong.
+3. **Do GDELT first.** No key and no facility matching are needed, just company-name
+   queries. It is the quickest way to get one full path working from end to end.
+4. **Then EPA ECHO and GHGRP**, then compute the three indices and compare.
+
+A cheap early result is available before any of that: since Paper 1's index reduces
+to "how many ESG buzzwords are in the report", we can test whether that *alone*
+correlates with any real-world anchor. If it doesn't, that says something about a
 whole family of dictionary-based methods.
 
 ---
@@ -535,5 +703,9 @@ whole family of dictionary-based methods.
 | **GHGRP** | The US programme requiring large facilities to report greenhouse gas emissions. Only covers big emitters (25,000+ tonnes CO2e/year). |
 | **GDELT** | A free global news database that computes a **tone** score for each article, roughly −100 (negative) to +100 (positive). |
 | **ClimateBERT** | An AI language model trained on climate text; can tell a promise apart from a completed action. |
+| **API** | A way for a program to request data from a website directly, instead of a person clicking through pages. |
+| **Entity matching** | Working out that a company in one dataset is the same company in another, when they use different names and IDs. |
+| **Fuzzy matching** | Matching names that are similar but not identical (e.g. "Exxon Mobil Corp" and "ExxonMobil"). Always needs checking by hand. |
+| **CIK** | The unique ID the US financial regulator gives each company. We use it as the common key to link all our data together. |
 | **Scope 1 / 2 / 3** | Emission categories: 1 = direct from your own operations, 2 = from the energy you buy, 3 = everything else in your supply chain. |
-| **Salience hypothesis** | Our conjecture that media-based greenwashing scores mostly track how *visible* a company is, not how much it lies. |
+| **Salience hypothesis** (visibility problem) | Our idea that media-based greenwashing scores mostly track how *visible* a company is, not how much it lies. |
