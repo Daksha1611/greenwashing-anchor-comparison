@@ -244,5 +244,5 @@ Not replication blockers, but they lower confidence in the reported figures:
    independently motivates the comparison our project makes.
 
 **Open TODO.** Transcribe Appendices A.1–A.4 (the four dictionaries) from the PDF into
-`data/raw/dictionaries/`. They are printed in the open-access PDF, so the term lists themselves
+a data folder when the experiment phase begins. They are printed in the open-access PDF, so the term lists themselves
 *are* recoverable even though the weighting scheme is not.

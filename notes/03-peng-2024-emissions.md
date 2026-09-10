@@ -5,7 +5,7 @@ become multinational corporations' strategic "greenwashing" tool for window-dres
 reduction? A cross-cultural analysis. *Business Strategy and the Environment, 33*(3), 2084–2115.
 https://doi.org/10.1002/bse.3586 (Wiley; open access under CC BY)
 
-**File.** `Papers/Bus Strat Env - 2023 - Peng - Do environmental scores become multinational corporations  strategic  greenwashing  tool for.pdf`
+**File.** `papers/Bus Strat Env - 2023 - Peng - Do environmental scores become multinational corporations  strategic  greenwashing  tool for.pdf`
 **Citation check.** Matches the citation supplied exactly. (DOI added; the filename's "2023"
 is the acceptance year — received 24 Mar 2023, accepted 15 Sep 2023, issue 2024.)
 

@@ -2,10 +2,6 @@
 
 Full citations, DOIs, publisher and indexing status for every source in this project.
 
-> **Location note.** This file lives in `Papers/` rather than a separate lowercase `papers/`
-> directory. A repository containing both `Papers/` and `papers/` cannot be checked out safely on
-> case-insensitive filesystems (macOS, Windows). Nothing in `Papers/` has been moved or renamed.
-
 **Citation verification:** all five citations below were checked against the PDFs. Three needed
 correction; those are flagged inline.
 

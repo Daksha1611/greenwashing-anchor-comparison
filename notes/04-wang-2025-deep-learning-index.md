@@ -4,7 +4,7 @@
 of corporate greenwashing index: a deep learning approach. *EPJ Data Science, 14*, 44.
 https://doi.org/10.1140/epjds/s13688-025-00562-w (Springer, open access, CC BY-NC-ND 4.0)
 
-**File.** `Papers/s13688-025-00562-w.pdf`
+**File.** `papers/s13688-025-00562-w.pdf`
 
 **Citation completion flagged.** The supplied citation had no authors. Extracted:
 **Xiao Wang, Xukuo Gao (corresponding), and Meng Sun**, all of the School of Management, Xi'an

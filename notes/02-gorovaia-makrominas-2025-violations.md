@@ -5,7 +5,7 @@ corporate-social responsibility reports using natural-language processing.
 *European Financial Management, 31*(1), 427–462. https://doi.org/10.1111/eufm.12509
 (Wiley; open access under CC BY-NC-ND)
 
-**File.** `Papers/Euro Fin Management - 2024 - Gorovaia - Identifying greenwashing in corporate‐social responsibility reports using.pdf`
+**File.** `papers/Euro Fin Management - 2024 - Gorovaia - Identifying greenwashing in corporate‐social responsibility reports using.pdf`
 
 **Citation discrepancies flagged.**
 1. There are exactly **two authors** — Nina Gorovaia (Frederick University, Cyprus) and Michalis

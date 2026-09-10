@@ -1,120 +1,104 @@
-# Greenwashing detection: comparing reality anchors
+# Greenwashing Detection: Do Different Ways of Measuring It Agree?
 
-A research project on greenwashing detection in corporate ESG disclosures.
+Business Economics project — a review of five papers on detecting **greenwashing**
+(companies claiming to be greener than they are) in corporate sustainability
+disclosures, and whether the different published ways of measuring it actually
+identify the same companies.
 
-## Research question
+## → Main deliverable: [`REPORT.md`](REPORT.md)
 
-> **Do greenwashing measures built on media sentiment identify the same firms as measures built on
-> regulatory violation records — or is media-anchored greenwashing detection largely measuring
-> firm visibility?**
+The single consolidated report: what greenwashing is and why it's hard to
+measure, each paper explained in plain language, the specific gap between them,
+the project idea that fills it, and the datasets a future implementation would
+need. **Start there.**
 
-Greenwashing indices in the published literature are anchored to different external realities —
-regulatory violations, measured emissions, media coverage — or to nothing external at all. No
-study compares two anchors on the same set of firms. If media-anchored and violation-anchored
-measures diverge, then media-based greenwashing indices may be measuring firm **visibility**
-rather than greenwashing, which would matter for a substantial part of this literature and for the
-ESG ratings it feeds.
+The files below are the supporting material behind the report. Every note is
+written in plain language, and technical terms are explained the first time they
+show up. See [`GLOSSARY.md`](GLOSSARY.md) for a quick reference.
 
-Full argument: **[REPORT.md](REPORT.md)**. Unfamiliar term? **[GLOSSARY.md](GLOSSARY.md)**.
+## The core idea in one paragraph
 
-## Headline finding from the review
+To catch greenwashing you need to compare what a company **says** against what it
+**does**. The "says" half is easy — score the sustainability report. The "does"
+half is the hard part, and published research has picked three different answers:
+government **fines**, measured **carbon emissions**, or **press coverage**. Some
+papers check against nothing at all. Everybody picks one and stops, and **nobody
+has checked whether they agree.** If ranking companies by fines gives a different
+worst-offenders list than ranking them by press coverage, then at least one of
+these published methods isn't measuring greenwashing — it may just be measuring
+how visible a company is.
 
-Davidescu et al. (2026) is treated in the literature — and was treated in this project's original
-framing — as the canonical *media-anchored* greenwashing index. Reading the methodology closely,
-**its published formula contains no media term**: every input is a TF–IDF score computed from the
-firm's own report. The aggregation rule is recoverable, and reproduces the paper's published
-figures to four decimal places, but the index measures ESG keyword density in disclosure, not any
-report-versus-media discrepancy.
+## The five papers
 
-This sharpens the research question rather than undermining it — but it changes what can be
-claimed, and it means this project builds its own explicitly specified media-anchored index rather
-than claiming to replicate theirs. Details: **[synthesis/gsi-formula.md](synthesis/gsi-formula.md)**.
-
-## Notes on the source papers
-
-| # | Note | Paper | Reality anchor |
-|---|---|---|---|
-| 1 | [01](notes/01-davidescu-2026-gsi.md) | Davidescu et al. (2026), *Sustainability* — Greenwashing Severity Index, 204 CEE firms | **None in formula** (media claimed) |
-| 2 | [02](notes/02-gorovaia-makrominas-2025-violations.md) | Gorovaia & Makrominas (2025), *Eur. Financial Mgmt* — violator vs non-violator CSR reports | Regulatory violations |
-| 3 | [03](notes/03-peng-2024-emissions.md) | Peng et al. (2024), *Bus. Strategy & Env.* — environmental scores vs carbon emissions | Measured emissions |
-| 4 | [04](notes/04-wang-2025-deep-learning-index.md) | Wang, Gao & Sun (2025), *EPJ Data Science* — MacBERT greenwashing index | None (text-internal) |
-| 5 | [05](notes/05-forliano-2025-landscape.md) | Forliano et al. (2025), *Rev. Managerial Science* — systematic review of 97 articles | n/a (review) |
+| # | Short name | What it does | Reality anchor | Notes |
+|---|------------|--------------|----------------|-------|
+| 1 | **GSI / ESG Disclosure** (Davidescu et al., 2026) | Builds a Greenwashing Severity Index for 204 Central & Eastern European firms from sustainability reports and news. We found its published formula contains no news component at all. | **None** (media claimed) | [notes/01](notes/01-davidescu-2026-gsi.md) |
+| 2 | **Identifying Greenwashing with NLP** (Gorovaia & Makrominas, 2025) | Splits US firms by whether they've been fined for environmental violations, then reads their reports. Polluters write longer, more positive, less readable reports — and change their writing right after getting caught. | **Violations** | [notes/02](notes/02-gorovaia-makrominas-2025-violations.md) |
+| 3 | **Environmental Scores as a Greenwashing Tool** (Peng et al., 2024) | Checks the environmental scores of 199 Fortune Global 500 firms against their actual carbon emissions. Higher scores go with *more* pollution, not less. | **Emissions** | [notes/03](notes/03-peng-2024-emissions.md) |
+| 4 | **Deep Learning Greenwashing Index** (Wang, Gao & Sun, 2025) | Uses an AI language model to read Chinese company reports sentence by sentence, separating vague aspiration from concrete verifiable action. | **None** (by design) | [notes/04](notes/04-wang-2025-deep-learning-index.md) |
+| 5 | **Mapping the Research Landscape** (Forliano et al., 2025) | Systematic review of 97 articles. Maps the field's theories and themes — useful for context, though it maps theories rather than measurement methods. | n/a (review) | [notes/05](notes/05-forliano-2025-landscape.md) |
 
 ## Synthesis
 
-- **[comparison.md](synthesis/comparison.md)** — the five papers side by side: sample, anchor, method, result.
-- **[gsi-formula.md](synthesis/gsi-formula.md)** — full step-by-step reconstruction of the GSI, with what is verified and what is not.
-- **[datasets-and-access.md](synthesis/datasets-and-access.md)** — the six data sources: access, rate limits, fields, gotchas.
-- **[open-questions.md](synthesis/open-questions.md)** — the gap as testable hypotheses, plus the full experimental design.
-- **[Papers/SOURCES.md](Papers/SOURCES.md)** — full APA citations, DOIs, publishers, indexing status.
+- [`synthesis/comparison.md`](synthesis/comparison.md) — the papers side by side: sample, reality anchor, method, headline result.
+- [`synthesis/gsi-formula.md`](synthesis/gsi-formula.md) — full step-by-step reconstruction of Paper 1's index, separating what we verified from what isn't recoverable.
+- [`synthesis/datasets-and-access.md`](synthesis/datasets-and-access.md) — the six data sources, with access notes, limits and available fields.
+- [`synthesis/open-questions.md`](synthesis/open-questions.md) — the gap written as testable hypotheses, plus the full experimental design.
 
-## Data sources
+## Common thread
 
-| Source | Purpose | Access | URL |
-|---|---|---|---|
-| **GDELT Project** | Global news with computed tone scores → GSI-media | Free, no key | https://www.gdeltproject.org/ |
-| **EPA ECHO** | Facility violations, inspections, penalties → GSI-violation | Free REST API, no key | https://echo.epa.gov/ |
-| **EPA GHGRP / FLIGHT** | Facility greenhouse gas emissions → GSI-emissions | Free, bulk download + API | https://ghgdata.epa.gov/ |
-| **SEC EDGAR** | 10-K filings; authoritative firm identity (CIK) — the join spine | Free; `User-Agent` required, 10 req/s | https://www.sec.gov/edgar/search/ |
-| **Responsibility Reports** | Corporate sustainability report PDFs | Free archive, scraping required | https://www.responsibilityreports.com/ |
-| **CDP** | Standardised climate disclosures | Partly licensed — treat as optional | https://www.cdp.net/en/data |
+All five papers circle the same conclusion:
 
-GDELT is used instead of NewsAPI because NewsAPI's free tier returns only about one month of
-history, which cannot support a multi-year panel.
+> Companies that talk greener frequently perform worse. This has been shown twice
+> independently — against pollution fines and against measured carbon emissions.
+> But the tools built to *detect* greenwashing are increasingly scored against
+> the company's own words rather than against reality, and **more disclosure has
+> not produced more honesty**. If a detection method rewards polished writing and
+> heavy press coverage instead of actual conduct, it reproduces the very problem
+> it was built to expose.
 
-## Planned method
+## What we found while reviewing
 
-Three indices over the **same** 150–300 US-listed firms:
+Paper 1 is treated in the literature — and was treated in this project's original
+framing — as the standard *media-based* greenwashing index. Working through its
+methodology, **its published formula contains no media term**: all three inputs
+are computed from the company's own report. The index measures how densely a
+report is packed with ESG vocabulary, not any gap between claims and coverage.
 
-- **GSI-media** — GDELT tone (with article volume retained separately as the visibility regressor)
-- **GSI-violation** — EPA ECHO violations aggregated to parent company
-- **GSI-emissions** — EPA GHGRP facility emissions aggregated to parent company
+We verified the arithmetic against the paper's own published tables (it
+reproduces their figures to four decimal places), so this isn't a
+misreading — the formula genuinely is what it is. Details in
+[`synthesis/gsi-formula.md`](synthesis/gsi-formula.md).
 
-Disclosure text is scored with **ClimateBERT** (commitment vs action). **Not FinBERT** — wrong domain.
+This sharpens the research question rather than weakening it, but it changes what
+the project can claim: we build our own media-based measure and specify it fully,
+rather than claiming to replicate theirs.
 
-Compared by **Spearman rank correlation**, **top-decile overlap** (Jaccard + Cohen's κ), and a
-**regression of GSI-media on firm size and media coverage volume** with sector fixed effects to
-test the salience hypothesis directly.
+## The PDFs
 
-## Repository layout
+All five papers are in [`papers/`](papers/); see
+[`papers/SOURCES.md`](papers/SOURCES.md) for full citations, DOIs and links.
 
-```
-├── README.md            you are here
-├── REPORT.md            consolidated argument: findings, gap, why it matters, design
-├── GLOSSARY.md          plain-language definitions
-├── Papers/              source PDFs (unmodified) + SOURCES.md
-├── notes/               one annotated note per paper, 01–05
-├── synthesis/           cross-paper analysis and experimental design
-├── src/                 pipeline scaffold — stubs and TODOs only, nothing implemented
-└── data/                raw / interim / processed (gitignored)
-```
+Three of the supplied citations needed correcting against the PDFs — most
+notably Paper 2, which has exactly two authors (not "et al.") and belongs to
+2025, not 2024. Paper 1 is published by MDPI; `SOURCES.md` records its indexing
+status, which is worth knowing given how heavily this project leans on it.
 
-## Setup
+One paper could not be obtained (*Detecting greenwashing behaviour in
+decarbonization performance*, Accounting & Finance, 2025). It is marked pending
+in `SOURCES.md`, has no note file, and **nothing has been assumed about its
+contents**.
 
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-```
+## How to use these notes
 
-Uses **pypdf** (PyPDF2 is deprecated), spacy, transformers, pandas, scipy, statsmodels.
+Read [`REPORT.md`](REPORT.md) first — it's self-contained and explains the whole
+idea from scratch. Then, if you want depth on a particular paper, go to its note.
+[`synthesis/comparison.md`](synthesis/comparison.md) is the fastest way to see
+how the five relate to each other.
 
 ## Status
 
-**Literature review — 5 of 6 papers.**
+**Literature review — 5 of 6 papers.** Notes, synthesis and report complete.
 
-- [x] Davidescu et al. (2026) — GSI reconstructed and verified; formula problems documented
-- [x] Gorovaia & Makrominas (2025) — citation corrected (two authors, 2025)
-- [x] Peng et al. (2024)
-- [x] Wang, Gao & Sun (2025) — authors extracted
-- [x] Forliano et al. (2025) — authors extracted; issue number still unconfirmed
-- [ ] **Pending:** *Detecting greenwashing behaviour in decarbonization performance*,
-      *Accounting & Finance*, 65(4), 3739–3762 (2025). Not obtained; no note written; no findings assumed.
-
-**Experiments — not started.** `src/` contains stubs, docstrings and TODOs only. No data has been
-retrieved from any source; no index has been computed.
-
-**Open tasks**
-- Obtain the sixth paper
-- Transcribe Davidescu et al. Appendices A.1–A.4 (the four dictionaries) into `data/raw/dictionaries/`
-- Confirm the issue number for Forliano et al. (2025)
-- Re-verify all API rate limits against live documentation before building the pipeline
+**Experiments — not started.** This repository is the review and design phase.
+No data has been retrieved and no index has been computed.

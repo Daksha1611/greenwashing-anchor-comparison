@@ -5,7 +5,7 @@
 *Review of Managerial Science, 19*, 3407–3456. https://doi.org/10.1007/s11846-025-00856-3
 (Springer, open access)
 
-**File.** `Papers/s11846-025-00856-3.pdf`
+**File.** `papers/s11846-025-00856-3.pdf`
 
 **Citation completion flagged.** The supplied citation had no authors. Extracted:
 **Canio Forliano** (Univ. of Turin), **Enrico Battisti** (Univ. of Turin), **Paola de Bernardi**

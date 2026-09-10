@@ -4,7 +4,7 @@
 Detecting greenwashing in ESG disclosure: An NLP-based analysis of Central and Eastern European
 firms. *Sustainability, 18*(3), 1486. https://doi.org/10.3390/su18031486 (MDPI, open access, CC BY)
 
-**File.** `Papers/sustainability-18-01486-v2.pdf`
+**File.** `papers/sustainability-18-01486-v2.pdf`
 **Citation check.** Matches the citation supplied. Received 20 Dec 2025, accepted 22 Jan 2026,
 published 2 Feb 2026.
 

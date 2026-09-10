@@ -58,7 +58,7 @@ pipeline is built — API terms change. Items I could not verify without hitting
     time out — filter by state or NAICS.
   - **Facilities are not companies.** One corporation owns many facilities under many operating
     names, and ownership changes over time. Aggregating facility violations to parent company is
-    the central difficulty of this project — see `src/entity_matching.py`.
+    the central difficulty of this project — see the entity-matching discussion at the end of this file.
   - **Enforcement intensity varies by state and region**, so raw violation counts partly measure
     regulator activity, not just firm behaviour. Consider normalising by facility count or by
     state-year enforcement baseline.
@@ -159,7 +159,7 @@ correlation uninterpretable.
 
 ## Practical notes
 
-- **Cache everything.** All six sources go into `data/raw/` on first fetch and are never re-fetched
+- **Cache everything.** Every source should be saved locally on first fetch and never re-fetched
   in normal operation. Reproducibility and politeness both demand it.
 - **Record retrieval dates.** ECHO and GDELT are living databases; results change under you.
 - **Respect the identified rate limits** — SEC 10 req/s with a `User-Agent` contact is the only
