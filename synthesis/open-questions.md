@@ -6,10 +6,19 @@ Greenwashing indices in this literature are anchored to different external reali
 Gorovaia & Makrominas (2025) anchor to **regulatory violation records**; Peng et al. (2024) anchor
 to **measured carbon emissions**; Wang et al. (2025) anchor to **nothing external**; Davidescu et
 al. (2026) describe their index as anchored to **media coverage** but publish a formula containing
-no media term (see `gsi-formula.md` §3.1). All four are peer-reviewed. **No study compares two or
+no media term (see `gsi-formula.md` §3.1). All four are peer-reviewed. **We found no study that compares two or
 more anchors on the same set of firms.** So we do not know whether these measures identify the
 same firms — and if they do not, a substantial part of this literature may be measuring something
 other than what it claims.
+
+> **The novelty claim has been narrowed.** After reading nineteen more papers (notes 06–24), the
+> sentence above is too broad. Bingler et al. (2024) relate one talk measure to both emissions
+> growth and negative news, as separate correlates; Raghunandan & Rajgopal (2022) compare ESG
+> scores against violations and emissions; Gibson Brandon et al. (2021) compare ESG raters with
+> each other. What we still found no study doing is building **several greenwashing indices on
+> the same firms, each anchored to a different reality check, and testing whether they rank the
+> same firms as worst**. The refined wording, with the hedge "as far as we found", is in
+> `extended-literature.md` §4.
 
 ## 2. The primary research question
 
@@ -34,6 +43,11 @@ other than what it claims.
   *H3 is supported if* size and coverage volume carry large, significant coefficients and the
   model explains a large share of variance — and especially if adding a real-conduct measure
   (violations or emissions) adds little incremental R².
+  *Added after the extended literature:* **anchor disagreement** (the dispersion of a firm's
+  standardised scores across the indices) is also higher for larger and more media-covered firms,
+  mirroring Gibson Brandon et al.'s finding for ESG raters †. *Support:* Drempetic et al. † (size
+  raises ESG scores) and Raghunandan & Rajgopal (ESG scores correlate with news coverage). (†:
+  from the research brief, not confirmed from the abstract.)
 
 - **H4 (anchor concordance, secondary).** The two *reality-anchored* measures agree with each
   other better than either agrees with the media measure — i.e. ρ(violation, emissions) >
@@ -41,6 +55,30 @@ other than what it claims.
   *Rationale:* papers 2 and 3 already agree using independent anchors. If both hard anchors agree
   with each other but not with media, that isolates media as the outlier rather than suggesting
   all measures are simply noisy.
+
+- **H5 (ratings anchor).** The **ratings-gap index** (GSI-ratings, after Yu et al.) agrees with the
+  media index more than with the violation or emissions indices.
+  *Rationale:* ratings and media share a visibility component. Drempetic et al. † find size raises
+  ESG scores, Gibson Brandon et al. † find rater disagreement is highest for the largest firms,
+  and Raghunandan & Rajgopal find ESG scores correlate with news coverage.
+  *Test:* compare ρ(ratings, media) with ρ(ratings, violation) and ρ(ratings, emissions).
+  *H5 fails if* the ratings index agrees at least as well with a hard anchor as with media.
+
+- **H6 (predictive validity).** Among the indices, the one best anchored to conduct best predicts
+  **next-year EPA enforcement actions and penalties**, out of sample.
+  *Rationale:* this is the tie-breaker if the indices disagree. Liu et al., Ghitti et al. and
+  Bacher et al. validate greenwashing measures against market outcomes; we would put conduct
+  outcomes first, because market outcomes can reflect visibility too.
+  *Test:* out-of-sample predictive accuracy of each index for next-year penalties, with the same
+  controls for every index.
+
+- **H7 (policy-shock validity).** A valid greenwashing index should **respond to the 2010 GHGRP
+  mandate** in the direction Luu et al. report (lower greenwashing after the rule for treated
+  firms). Indices that do not respond are suspect.
+  *Test:* difference-in-differences of each index on GHGRP treatment, treated firms against
+  untreated firms, before and after 2010.
+  *Caution:* Luu et al. use a ratings-gap measure from one vendor, so H7 is a test of whether
+  *our* indices behave like theirs, not proof that theirs is right.
 
 **Note that H1–H3 are informative whichever way they come out.** Convergence would validate a
 cheap, globally available measure. Divergence would identify a measurement problem in a
@@ -107,6 +145,13 @@ the analogue of Wang et al.'s symbolic-vs-substantive split, and it is what make
 | Top-decile agreement | **Cohen's κ** on binary top-decile flags | H2 — overlap corrected for chance |
 | Salience | OLS: `GSI_media ~ log(size) + log(coverage_volume) + sector FE` | H3 |
 | Incremental validity | Add `GSI_violation` / `GSI_emissions` to the H3 model; compare adjusted R² | H3 |
+| Anchor disagreement | Dispersion of standardised scores across indices, regressed on log size and coverage volume | H3 (extended) |
+| Ratings agreement | Spearman ρ of `GSI_ratings` with each other index | H5 |
+| Out-of-sample prediction | Each index predicting next-year EPA penalties | H6 |
+| Policy-shock response | Difference-in-differences on GHGRP treatment (2010) | H7 |
+
+*(The H5–H7 tests need the extra indices set out in `combining-and-improvements.md`: GSI-ratings
+and a controversy index. They are designs only; nothing has been computed.)*
 
 **Why both Jaccard and κ:** Jaccard reports the plain overlap of two top-decile sets; κ corrects
 for the overlap you would expect by chance. Reporting only Jaccard would overstate agreement.
