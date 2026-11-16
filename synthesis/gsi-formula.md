@@ -3,8 +3,10 @@
 Source: Davidescu et al. (2026), *Sustainability, 18*(3), 1486, Sections 2.1–2.6 and Tables 5–12.
 Open access (CC BY), so the text is fully available.
 
-**Purpose of this document.** We intend to replicate this index exactly. A plausible-but-wrong
-reconstruction would silently corrupt everything downstream, so this file separates three things:
+**Purpose of this document.** We do not claim to replicate this index, and we are not building on
+it: this file reconstructs what the paper publishes so we can say precisely what it does and does
+not contain. A plausible-but-wrong reconstruction would misrepresent the paper, so this file
+separates three things:
 what the paper **states**, what I **verified arithmetically**, and what remains **ambiguous**.
 
 **Bottom line up front.** The aggregation step is fully recoverable and I have confirmed it

@@ -196,3 +196,123 @@ with sector fixed effects.
 Our term for the external, non-textual fact a greenwashing measure is validated against —
 violations, emissions, media coverage, or nothing. The organising column of
 `synthesis/comparison.md`, and the axis along which this project's contribution is defined.
+
+The extended literature adds two anchor types to the original four: the **ratings gap** (a
+disclosure score minus a performance score) and **controversy** (negative news events, as opposed
+to average media tone). See the entries below.
+
+---
+
+## Added with the extended literature (notes 06–24)
+
+### Cheap talk / ClimateBERT CTI
+
+**Cheap talk** is climate language that costs the firm nothing to say and commits it to nothing:
+vague, non-specific statements about intentions rather than concrete, checkable commitments.
+
+Bingler et al. (2022, 2024) use **ClimateBERT**, a language model fine-tuned on climate text, to
+find it. The 2024 paper turns this into the **cheap talk index (CTI)**, which † measures the
+share of imprecise versus precise climate commitments in a report. They then relate the CTI to
+climate initiatives, emissions and negative news. († = from our research brief; the abstract does
+not define the index.)
+
+> Not the same as the "symbolic" side of Wang et al.'s split, though closely related: both
+> separate vague aspiration from verifiable action.
+
+### Counter-accounting
+
+Setting a company's own account of itself against **independent information** about the same
+company, such as news events, NGO reports or regulatory records, to see what the company left
+out. Boiral (2013) does it by hand: he compared 23 GRI A/A+ reports against 116 significant news
+events and found that 90 per cent of the significant negative events were not reported.
+
+Our proposal (Improvement 4) is to automate it as an **omission rate**: the share of a firm's
+negative, environment-themed news events that its report never mentions.
+
+### Ratings-gap greenwashing score (disclosure minus performance)
+
+The most common way empirical finance and accounting papers measure greenwashing. Take a
+commercial **ESG disclosure score** (how much the firm reports) and a commercial **ESG
+performance score** (how well it does), standardise both, and subtract:
+
+```
+greenwashing = standardised disclosure score − standardised performance score
+```
+
+A high value means disclosure runs ahead of performance. Yu et al. (2020) define it; Luu et al.
+(2025) and Liu et al. (2024) † use it. Both halves are **third-party scores**, so the measure
+inherits the biases of the ratings (see *Size bias* and *Rating disagreement*). In this repository
+it is a **reality-anchor type of its own**, and our proposed fourth index is **GSI-ratings**.
+
+### ESG controversy score
+
+A score that rates a company by **negative news events** (scandals, lawsuits, accidents,
+allegations) that involve it, built by a data provider from media coverage. It is used as the
+"outside" side of some greenwashing measures (Ghitti et al. †, Bacher et al. †, and as a possible
+misconduct input in Dorfleitner & Utz). It is different from **average media tone**, which is what
+our planned GDELT measure uses: a controversy score counts what happened, tone describes how
+coverage sounded.
+
+> Because it comes from news, a controversy score is exposed to the visibility problem: well-known
+> firms get more coverage of everything they do wrong.
+
+### Rating disagreement
+
+The fact that different ESG data providers give the same company different scores. Gibson Brandon
+et al. (2021) study seven providers for S&P 500 firms, find that stock returns are positively
+related to disagreement (mainly on the environmental dimension), and † report an average
+correlation between providers of about 0.45. For us it is both a model and a warning: it is the
+same exercise we propose for greenwashing indices, and it shows that "measuring the same concept"
+does not guarantee agreement.
+
+### Size bias
+
+The tendency of a score to rise with **firm size**, independently of conduct. Drempetic et al.
+(2020) † find that firm size, the resources available for producing ESG data and data
+availability all raise a firm's ESG score, favouring large firms. A follow-up (Dobrick et al.,
+2023) † reports that it persists in Refinitiv data. It is the main prior evidence for our
+**salience hypothesis**.
+
+### Legitimacy theory vs voluntary disclosure theory
+
+Two competing explanations for why firms disclose environmental information, with opposite
+predictions about who talks more.
+
+- **Legitimacy theory.** Firms disclose to keep their social licence to operate. Firms under
+  pressure, such as those that have just caused a spill or been fined, talk *more*. Supported by
+  Gorovaia & Makrominas (violators write more), Cho et al. (disclosure tracks exposure) and Cho
+  (2009).
+- **Voluntary disclosure theory.** Firms with good news tell the market, so good performers
+  disclose *more*. Supported by Clarkson et al. † and Tadros & Magnan.
+
+Which one the data support seems to depend on what is counted: volume and tone, or hard
+verifiable items. See `synthesis/extended-literature.md` §3.2.
+
+### MTMM matrix (multi-trait multi-method)
+
+A standard way to test whether several measures are measuring the same thing. You take one
+underlying **trait** (here, greenwashing), measure it by several **methods** (here, the anchors),
+and lay out all the correlations in one matrix. If the methods are valid, measures of the same
+trait should agree more than measures of different traits, and measures that share a method type
+should not agree only because of that shared method. In our design: do the violation and emissions
+indices (both "hard" anchors) correlate with each other more than with the media index?
+
+### Predictive validity
+
+How well a measure predicts something it *should* predict later. If two greenwashing indices
+disagree, the one that better predicts **next-year EPA penalties**, say, has the stronger claim to
+measure real conduct. Liu et al. (crash risk), Ghitti et al. † (firm value) and Bacher et al.
+(asset prices) validate against market outcomes; we would put conduct outcomes first, because
+market outcomes can themselves reflect visibility. (Hypothesis H6.)
+
+### Quasi-natural experiment / difference-in-differences
+
+A **quasi-natural experiment** is an event or rule that affects some firms and not others, in a
+way the firms did not choose, so it works like an experiment without one being run.
+**Difference-in-differences (DiD)** compares how the affected ("treated") group changes before and
+after the event, against how an unaffected ("control") group changes over the same period.
+
+Luu et al. (2025) use the US GHGRP, which required large emitters to report from 2010, as the
+event: 134 treated firms against 2,597 controls. Gorovaia & Makrominas use a staggered version for
+the effect of a violation. For us, the GHGRP gives a test of whether an index responds to a real
+policy change (Hypothesis H7).

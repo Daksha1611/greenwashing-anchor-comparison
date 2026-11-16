@@ -135,6 +135,20 @@ pipeline is built — API terms change. Items I could not verify without hitting
 - **Recommendation: treat CDP as optional.** The three core indices can be built without it.
   Do not let a licence negotiation block the pipeline.
 
+## 7. Violation Tracker (Good Jobs First) — optional cross-check on ECHO
+
+- **URL:** https://violationtracker.goodjobsfirst.org/ *(verify)*
+- **Purpose:** a database of corporate violations and penalties under federal laws from more than
+  50 US agencies, compiled by the non-profit Good Jobs First. Raghunandan & Rajgopal (2022, note
+  17) use it to measure the compliance records of the firms that ESG funds hold.
+- **Why it is here:** a cross-check on our own aggregation of EPA ECHO facilities to parent
+  companies, and a second view of the violation anchor that is not environment-only (the most
+  common violation type in the paper is workplace safety).
+- **Status: not accessed, and nothing about access is verified.** We have not checked its licence,
+  whether bulk download is allowed, how it is linked to parent companies, or whether academic use
+  requires permission. Treat all of these as open questions **(verify before any use)**.
+- **Recommendation: optional.** The three core indices do not depend on it.
+
 ---
 
 ## Joining strategy
