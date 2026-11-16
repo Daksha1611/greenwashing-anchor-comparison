@@ -12,8 +12,8 @@ different published ways of measuring it actually identify the same companies.
 
 ## Team
 
-Daksha Mehta (2024IMG-015), Aastha Amit Goliwar (2024IMG-001), Aayush Shankar (2024IMG-002),
-Ayush Pratap Singh (2024IMG-010), Panchadarla Veditha Keerti Rani (2024IMG-030),
+Aastha Amit Goliwar (2024IMG-001), Aayush Shankar (2024IMG-002), Ayush Pratap Singh (2024IMG-010),
+Daksha Mehta (2024IMG-015), Panchadarla Veditha Keerti Rani (2024IMG-030),
 Siddharth Bisarya (2024IMG-502). Course instructor: Dr. Arun Kumar.
 
 ## Other material
