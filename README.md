@@ -8,8 +8,16 @@ different published ways of measuring it actually identify the same companies.
 
 - [`BE_Report.docx`](BE_Report.docx) / [`BE_Report.pdf`](BE_Report.pdf): the course report,
   laid out in the department's paper format (title block, Abstract and Index Terms, Roman-numeral
-  sections, APA references). 14 pages. Figures are in [`figures/`](figures/). Two placeholders,
-  highlighted in yellow, still need filling in: the instructor's name and the institute email.
+  sections, APA references). 14 pages. Figures are in [`figures/`](figures/).
+
+## Team
+
+Daksha Mehta (2024IMG-015), Aastha Amit Goliwar (2024IMG-001), Aayush Shankar (2024IMG-002),
+Ayush Pratap Singh (2024IMG-010), Panchadarla Veditha Keerti Rani (2024IMG-030),
+Siddharth Bisarya (2024IMG-502). Course instructor: Dr. Arun Kumar.
+
+## Other material
+
 - [`BE_Project.tex`](BE_Project.tex) / [`BE_Project.pdf`](BE_Project.pdf): the longer LaTeX version
   of the same review (30 pages), with a full write-up of each paper and the verification record.
 - [`REPORT.md`](REPORT.md): the earlier plain-language report on the first five papers. It is
