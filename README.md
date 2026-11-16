@@ -6,8 +6,12 @@ different published ways of measuring it actually identify the same companies.
 
 ## → Main deliverables
 
-- [`BE_Project.tex`](BE_Project.tex) / [`BE_Project.pdf`](BE_Project.pdf): the full LaTeX report
-  consolidating all 24 papers, the refined gap and the proposed design.
+- [`BE_Report.docx`](BE_Report.docx) / [`BE_Report.pdf`](BE_Report.pdf): the course report,
+  laid out in the department's paper format (title block, Abstract and Index Terms, Roman-numeral
+  sections, APA references). 14 pages. Figures are in [`figures/`](figures/). Two placeholders,
+  highlighted in yellow, still need filling in: the instructor's name and the institute email.
+- [`BE_Project.tex`](BE_Project.tex) / [`BE_Project.pdf`](BE_Project.pdf): the longer LaTeX version
+  of the same review (30 pages), with a full write-up of each paper and the verification record.
 - [`REPORT.md`](REPORT.md): the earlier plain-language report on the first five papers. It is
   self-contained and still the best place to start if you want the idea explained from scratch.
 
